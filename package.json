@@ -1,0 +1,69 @@
+{
+  "name": "Wa-OpenAI",
+  "version": "2.0.0",
+  "description": "WhatsApp Bot OpenAI ChatGPT Using Lib Baileys Multi Device",
+  "main": "index.js",
+  "type": "commonjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run pm2memory",
+    "pm2memory": "pm2 start index.js --deep-monitoring --attach --name zero-two --max-memory-restart 500M",
+    "stop": "pm2 stop zero-two",
+    "restart": "pm2 restart zero-two"
+  },
+  "keywords": [
+    "termux",
+    "whatsapp-openai",
+    "whatsapp-bot",
+    "whatsapp-baileys",
+    "baileys-md",
+    "bot-wa",
+    "bot-md",
+    "whatsapp-multi-device"
+  ],
+  "base": "https://github.com/DikaArdnt/Hisoka-Morou",
+  "author": "Roane",
+  "license": "MIT",
+  "dependencies": {
+    "@adiwajshing/baileys": "npm:baileys@^6.0.9",
+    "@adiwajshing/keyed-db": "^0.2.4",
+    "@hapi/boom": "^10.0.0",
+     
+    "awesome-phonenumber": "^2.64.0",
+    "axios": "^1.3.6",
+     
+    "chalk": "^4.1.2",
+    "child_process": "^1.0.2",
+    "crypto": "^1.0.1",
+    "ffmpeg": "^0.0.4",
+    "figlet": "^1.5.2",
+    "file-type": "^18.3.0",
+    "fluent-ffmpeg": "^2.1.2",
+    "fs": "0.0.1-security",
+    "jimp": "^0.16.13",
+    "lib": "^5.0.1",
+    "lodash": "^4.17.21",
+    "mime": "^3.0.0",
+     
+    "openai": "^3.2.1",
+    
+    "pino": "^7.0.5",
+    "proto": "^1.0.19",
+    "qrcode-terminal": "^0.12.0",
+     
+    "util": "^0.12.4",
+     
+  },
+  "directories": {
+    "lib": "lib",
+    "src": "src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sansekai/Wa-OpenAI.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Sansekai/Wa-OpenAI/issues"
+  },
+  "homepage": "https://github.com/Sansekai/Wa-OpenAI#readme"
+}
