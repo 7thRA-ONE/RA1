@@ -1,6 +1,6 @@
 const sessionName = "RA-ONE";
-const donet = "wa.me/917820953034";
-const owner = ["917820953034"]; // Put your number here ex: ["62xxxxxxxxx"]
+const donet = "wa.me/13233063590";
+const owner = ["13233063590"]; // Put your number here ex: ["62xxxxxxxxx"]
 const {
   default: sansekaiConnect,
   useMultiFileAuthState,
@@ -10,7 +10,7 @@ const {
   jidDecode,
   proto,
   getContentType,
-} = require("@adiwajshing/baileys");
+} = require("@sampandey001/baileys");
 const pino = require("pino");
 const { Boom } = require("@hapi/boom");
 const fs = require("fs");

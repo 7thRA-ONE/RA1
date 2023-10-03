@@ -8,7 +8,7 @@ const {
   prepareWAMessageMedia,
   areJidsSameUser,
   getContentType
-} = require("@adiwajshing/baileys");
+} = require("@sampandey001/baileys");
 const fs = require("fs");
 const util = require("util");
 const chalk = require("chalk");
@@ -43,7 +43,9 @@ module.exports = sansekai = async (client, m, chatUpdate, store, setting) => {
           "";
       var budy = typeof m.text == "string" ? m.text : "";
       // var prefix = /^[\\/!#.]/gi.test(body) ? body.match(/^[\\/!#.]/gi) : "/"
-      var prefix = /^[\\/!#.]/gi.test(body) ? body.match(/^[\\/!#.]/gi) : "/";
+      // var prefix = /^[\\/!#.]/gi.test(body) ? body.match(/^[\\/!#.]/gi) : "/";
+    var prefix = /^[^\w\s@]*/.test(body) ? body.match(/^[^\w\s@]*/) : "/";
+
       const isCmd2 = body.startsWith(prefix);
       const command = body.replace(prefix, "")
           .trim()
@@ -147,24 +149,14 @@ Feel free to explore and enjoy! 😊
           case "openai":
           case "ra1":
               try {
-                  if (setting.keyopenai === "ISI_APIKEY_OPENAI_DISINI") return reply("Apikey  diisi\n\nPlease fill in the apikey first in the file key.json\n\nApikeynya bisa dibuat di website: https://beta.openai.com/account/api-keys");
+                 // if () return reply("\n\nPlease fill in the apikey first in the file key.json\n\n ");
                   if (!text) return reply(`I'm RA-1 I am artificial intelligence 
-           developed by 尺oんﾉｲ .\n\nfor use Example:\n\n${prefix}${command} What is a recession`);
+           developed by RAONE .\n\nfor use Example:\n\n${prefix}${command} What is a recession`);
                   const configuration = new Configuration({
-                      apiKey: setting.keyopenai,
+                      apiKey: process.env.OPENAIKEY,
                   });
                   const openai = new OpenAIApi(configuration);
                   
-                  /*const response = await openai.createCompletion({
-            model: "text-davinci-003",
-            prompt: text,
-            temperature: 0, // Higher values means the model will take more risks.
-            max_tokens: 2048, // The maximum number of tokens to generate in the completion. Most models have a context length of 2048 tokens (except for the newest models, which support 4096).
-            top_p: 1, // alternative to sampling with temperature, called nucleus sampling
-            frequency_penalty: 0.3, // Number between -2.0 and 2.0. Positive values penalize new tokens based on their existing frequency in the text so far, decreasing the model's likelihood to repeat the same line verbatim.
-            presence_penalty: 0 // Number between -2.0 and 2.0. Positive values penalize new tokens based on whether they appear in the text so far, increasing the model's likelihood to talk about new topics.
-        });
-          m.reply(`${response.data.choices[0].text}`);*/
                   const response = await openai.createChatCompletion({
                       model: "gpt-3.5-turbo",
                       messages: [{
@@ -189,10 +181,10 @@ Feel free to explore and enjoy! 😊
           case "image":
           case "images":
               try {
-                  if (setting.keyopenai === "ISI_APIKEY_OPENAI_DISINI") return reply("Apikey belum diisi\n\nSilahkan isi terlebih dahulu apikeynya di file key.json\n\nApikeynya bisa dibuat di website: https://beta.openai.com/account/api-keys");
+                  //if () return reply("\n\n Key is required\n\n ");
                   if (!text) return reply(`Creating an image from AI.\n\nContoh:\n${prefix}${command} Wooden house on snow mountain`);
                   const configuration = new Configuration({
-                      apiKey: setting.keyopenai,
+                      apiKey: process.env.OPENAIKEY||"AIzaSyCyouca1_KKy4W_MG1xsPzuku5oa8W358c"
                   });
                   
                   
@@ -248,38 +240,11 @@ Feel free to explore and enjoy! 😊
                 }
               }*/
               ////////////////////////////////////////////////////////////////////////////////////////////////////////
-              break;
-          case "AUD":
-          case "msic":
-              try {
-                  if (setting.keyopenai === "ISI_APIKEY_OPENAI_DISINI") return reply("Apikey belum diisi\n\nSilahkan isi terlebih dahulu apikeynya di file key.json\n\nApikeynya bisa dibuat di website: https://beta.openai.com/account/api-keys");
-                  if (!text) return reply(`Creating an image from AI.\n\nContoh:\n${prefix}${command} Wooden house on snow mountain`);
-                  const configuration = new Configuration({
-                      apiKey: setting.keyopenai,
-                  });
-                  const openai = new OpenAIApi(configuration);
-                  const response = await openai.createTranscription(
-                      fs.createReadStream("audio.mp3"),
-                      
-                      {
-                          "file": "audio.mp3",
-                          "model": "whisper-1"
-                      }
-                      
-                  );
-                  m.reply(`${response.data.choices[0].message.content}`);
-              } catch (error) {
-                  if (error.response) {
-                      console.log(error.response.status);
-                      console.log(error.response.data);
-                      console.log(`${error.response.status}\n\n${error.response.data}`);
-                  } else {
-                      console.log(error);
-                      m.reply("Sorry an  error  :" + error.message);
-                  }
-              }
+             
+               
               
               ///////////////////////////96        
+              break;
               break;
           default: {
               if (isCmd2 && budy.toLowerCase() != undefined) {
