@@ -56,8 +56,8 @@ module.exports = sansekai = async (client, m, chatUpdate, store, setting) => {
           .split(/ +/)
           .slice(1);
       const pushname = m.pushName || "No Name";
-      const BOT_owner = "尺oんﾉｲ";
-      const donet = "917820953034"
+      const BOT_owner = "RAONE";
+      const donet = "132330635904"
       let text = (q = args.join(" "));
       const from = m.chat;
       const reply = m.reply;

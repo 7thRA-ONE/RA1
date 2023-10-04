@@ -7,9 +7,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npm run pm2memory",
-    "pm2memory": "pm2 start index.js --deep-monitoring --attach --name zero-two --max-memory-restart 500M",
-    "stop": "pm2 stop zero-two",
-    "restart": "pm2 restart zero-two"
+    "pm2memory": "pm2 start index.js --deep-monitoring --attach --name ra1 --max-memory-restart 500M",
+    "stop": "pm2 stop ra1",
+    "restart": "pm2 restart ra1"
   },
   "keywords": [
     "termux",
@@ -33,6 +33,7 @@
     "chalk": "^4.1.2",
     "child_process": "^1.0.2",
     "crypto": "^1.0.1",
+    "data-uri-to-buffer": "^6.0.1",
     "ffmpeg": "^0.0.4",
     "figlet": "^1.5.2",
     "file-type": "^18.3.0",
@@ -42,6 +43,7 @@
     "lib": "^5.0.1",
     "lodash": "^4.17.21",
     "mime": "^3.0.0",
+    "node-fetch": "^2.6.9",
     "openai": "^3.2.1",
     "pino": "^7.0.5",
     "proto": "^1.0.19",
