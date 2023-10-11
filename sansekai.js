@@ -57,7 +57,7 @@ module.exports = sansekai = async (client, m, chatUpdate, store, setting) => {
           .slice(1);
       const pushname = m.pushName || "No Name";
       const BOT_owner = "RAONE";
-      const donet = "132330635904"
+      const donet = "13233063590"
       let text = (q = args.join(" "));
       const from = m.chat;
       const reply = m.reply;
@@ -148,6 +148,7 @@ Feel free to explore and enjoy! 😊
           case "ai":
           case "openai":
           case "ra1":
+          case "gpt":
               try {
                  // if () return reply("\n\nPlease fill in the apikey first in the file key.json\n\n ");
                   if (!text) return reply(`I'm RA-1 I am artificial intelligence 

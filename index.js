@@ -290,7 +290,7 @@ async function startHisoka() {
       }
     } else if (connection === "open") {
       console.log(color("Bot  conneted to server", "green"));
-      console.log(color("HELLO I'M ROHIT THE OWNER OF THIS BOT \n\n FOLLOW ME ON IG @nxt_7r (:", "yellow"));
+      console.log(color("HELLO I'M RAONE  THE OWNER OF THIS BOT \n\n FOLLOW ME ON IG @nxt_7r (:", "yellow"));
       console.log(color("Type /menu to see menu"));
       client.sendMessage(owner + "@s.whatsapp.net", { text: `Bot started!\n\nVisit me here:)\n${donet}` });
     }
