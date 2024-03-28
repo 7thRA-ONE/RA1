@@ -1,6 +1,6 @@
 const sessionName = "RA-ONE";
-const donet = "wa.me/13233063590";
-const owner = ["13233063590"]; // Put your number here ex: ["62xxxxxxxxx"]
+const donet = "wa.me/13234541422";
+const owner = ["13234541422"]; // Put your number here ex: ["62xxxxxxxxx"]
 const {
   default: sansekaiConnect,
   useMultiFileAuthState,
@@ -10,6 +10,7 @@ const {
   jidDecode,
   proto,
   getContentType,
+  Browsers,
 } = require("@sampandey001/baileys");
 const pino = require("pino");
 const { Boom } = require("@hapi/boom");
@@ -163,7 +164,7 @@ async function startHisoka() {
   const client = sansekaiConnect({
     logger: pino({ level: "silent" }),
     printQRInTerminal: true,
-    browser: ["RA-1 - Sansekai", "Safari", "5.1.7"],
+    browser:Browsers.macOS("Desktop"),
     auth: state,
   });
 
