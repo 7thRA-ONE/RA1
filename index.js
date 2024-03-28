@@ -11,7 +11,7 @@ const {
   proto,
   getContentType,
   Browsers,
-} = require("@sampandey001/baileys");
+} = require("@whiskeysockets/baileys");
 const pino = require("pino");
 const { Boom } = require("@hapi/boom");
 const fs = require("fs");
