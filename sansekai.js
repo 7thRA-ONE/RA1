@@ -154,8 +154,8 @@ Feel free to explore and enjoy! 😊
                   if (!text) return reply(`I'm RA-1 I am artificial intelligence 
            developed by RAONE .\n\nfor use Example:\n\n${prefix}${command} What is a recession`);
                   const configuration = new Configuration({
-                      apiKey: process.env.OPENAIKEY,
-                  });
+                      apiKey: process.env.OPENAIKEY||'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',
+                  }); 
                   const openai = new OpenAIApi(configuration);
                   
                   const response = await openai.createChatCompletion({
@@ -185,7 +185,7 @@ Feel free to explore and enjoy! 😊
                   //if () return reply("\n\n Key is required\n\n ");
                   if (!text) return reply(`Creating an image from AI.\n\nContoh:\n${prefix}${command} Wooden house on snow mountain`);
                   const configuration = new Configuration({
-                      apiKey: process.env.OPENAIKEY||"AIzaSyCyouca1_KKy4W_MG1xsPzuku5oa8W358c"
+                      apiKey: process.env.OPENAIKEY||"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"
                   });
                   
                   
